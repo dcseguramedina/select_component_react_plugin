@@ -1,0 +1,32 @@
+// Variables
+$primary-color: #007bff;
+$font-weight-bold: bold;
+
+// Select wrapper styling
+.selectWrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 0.5rem;
+
+  // Label styling
+  label {
+    font-weight: $font-weight-bold;
+  }
+
+  // Select styling
+  select {
+    padding: 0.3rem;
+
+    // hover and focus effects
+    &:hover {
+      border-color: $primary-color;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: darken($primary-color, 10%);
+      box-shadow: 0 0 5px rgba($primary-color, 0.5);
+    }
+  }
+}
