@@ -1,32 +1,58 @@
-// Variables
-$primary-color: #007bff;
-$font-weight-bold: bold;
+:root {
+  --select-primary-color: #007bff;
+  --select-font-weight-bold: bold;
+  --select-padding: 0.5rem;
+  --select-border-radius: 4px;
+  --select-border-color: #ccc;
+  --select-focus-box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
 
-// Select wrapper styling
 .selectWrapper {
   display: flex;
   flex-direction: column;
   text-align: left;
   gap: 0.5rem;
 
-  // Label styling
   label {
-    font-weight: $font-weight-bold;
+    font-weight: var(--select-font-weight-bold);
+    color: #333;
   }
 
-  // Select styling
   select {
-    padding: 0.3rem;
+    padding: var(--select-padding);
+    border: 1px solid var(--select-border-color);
+    border-radius: var(--select-border-radius);
+    font-size: 1rem;
+    background-color: #fff;
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s;
 
-    // hover and focus effects
     &:hover {
-      border-color: $primary-color;
+      border-color: var(--select-primary-color);
     }
 
     &:focus {
       outline: none;
-      border-color: darken($primary-color, 10%);
-      box-shadow: 0 0 5px rgba($primary-color, 0.5);
+      border-color: var(--select-primary-color);
+      box-shadow: var(--select-focus-box-shadow);
+    }
+
+    &[multiple] {
+      padding: 0.3rem;
+      min-height: 100px;
+    }
+
+    &:disabled {
+      background-color: #f5f5f5;
+      cursor: not-allowed;
+    }
+  }
+
+  &.error select {
+    border-color: #dc3545;
+
+    &:focus {
+      box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.25);
     }
   }
 }

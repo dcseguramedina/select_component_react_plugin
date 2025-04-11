@@ -1,6 +1,5 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
-
 import SelectComponent from "./SelectComponent";
 import { SelectComponentProps } from "./SelectComponent.types";
 
@@ -24,19 +23,18 @@ describe("Select Component", () => {
         const { getByLabelText, getByText } = render(<SelectComponent {...props} />);
 
         // Check if the label is rendered
-        const labelElement = getByLabelText(props.label); // Finds the <label> associated with the select
+        const labelElement = getByLabelText(props.label);
         expect(labelElement).toHaveTextContent("Select an option");
 
         // Check if the options are rendered
         props.options.forEach((option) => {
-            const optionElement = getByText(option.label); // Finds each option by its label
+            const optionElement = getByText(option.label);
             expect(optionElement).toHaveTextContent(option.label);
         });
     });
 
     it("should call onChange when a different option is selected", () => {
         const { getByLabelText } = render(<SelectComponent {...props} />);
-
         const selectElement = getByLabelText(props.label);
 
         // Simulate changing the value of the select element

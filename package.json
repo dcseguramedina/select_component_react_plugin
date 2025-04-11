@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "build/index.js",
   "module": "build/index.es.js",
+  "types": "build/index.d.ts",
   "files": [
     "build"
   ],
@@ -13,9 +14,16 @@
     "build": "rollup -c",
     "watch": "rollup -c -w"
   },
-  "author": "",
+  "author": "dcsegura",
   "license": "ISC",
-  "description": "",
+  "description": "A customizable React select component",
+  "keywords": [
+    "react",
+    "select",
+    "dropdown",
+    "ui-component",
+    "typescript"
+  ],
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
