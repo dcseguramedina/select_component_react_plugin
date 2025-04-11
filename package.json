@@ -1,6 +1,6 @@
 {
   "name": "select_component_react_plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "build/index.js",
   "module": "build/index.es.js",
   "types": "build/index.d.ts",
@@ -50,4 +50,3 @@
     "typescript": "^5.7.2"
   }
 }
-
